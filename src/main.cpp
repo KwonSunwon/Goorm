@@ -1,23 +1,25 @@
 #include <iostream>
+#include <cstddef>
 
-void Print_int(int x){
-	printf("%d 인수는 %s입니다.\n", x, (x)? "참":"거짓");
+using namespace std;
+
+void f(int* pi){
+	cout << "정수" << endl;
 }
-void Print_bool(bool x){
-	std::cout << std::boolalpha << x << " 인수는 " << (x?"참":"거짓") << "입니다." << std::endl;
-	std::cout << "bool 타입의 데이터는 " << std::boolalpha << x << "와" << !x <<"로 표시할 수 있습니다." << std::endl;
+void f(double* pd){
+	cout << "실수" << endl;
+}
+void f(nullptr_t ptr){
+	cout << "null 포인터" << endl;
 }
 
 int main(){
-	bool ok = true;
-	bool notok = false;
+	int pi = 0;
+	double pd = 0.0;
 	
-	Print_int(100);
-	Print_bool(ok);
+	f(&pi);
+	f(&pd);
+	f(nullptr);
 	
-	bool istrue;
-	std::cin >> std::boolalpha >> istrue;
-	std::cout << istrue << "=" << (istrue == true) << std::endl;
-	
-	return 0;
+	//f(null)은 모든 함수를 가리키므로 에러가 발생한다.
 }
