@@ -1,3 +1,4 @@
+/*
 #include <iostream>
 #include <cstddef>
 
@@ -23,3 +24,4 @@ int main(){
 	
 	//f(null)은 모든 함수를 가리키므로 에러가 발생한다.
 }
+*/
