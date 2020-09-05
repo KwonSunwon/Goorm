@@ -7,23 +7,26 @@ std::uniform_int_distribution<int> uid(0,9);
 
 int * makeCpuNo();
 int * inputUserNo();
-void checkSB(const int*, const int*);
+bool checkSB(const int*, const int*);
 
 int main(){
-    bool regame;
-    do
-    {
+    bool regame = false;
+    bool win = false;
+    do{
         int *cpuNo;
         cpuNo = makeCpuNo();
 
+        do{
         int *userNO;
         userNO = inputUserNo();
-        checkSB(cpuNo,userNO);
+        win = checkSB(cpuNo,userNO);
+        } while (!win);
+
+        std::cout << "게임을 계속하시겠습니까? Y : 1 , N : 0" <<std::endl;
 
         std::cin >> regame;
-        
+
     } while (regame);
-    
 }
 
 int * makeCpuNo(){
@@ -50,7 +53,8 @@ int * inputUserNo(){
     return userNo;
 }
 
-void checkSB(const int* cpuNo, const int* userNo){
+bool checkSB(const int* cpuNo, const int* userNo){
+    /*
     for(int i = 0; i<4 ; ++i)
         std::cout << cpuNo[i] << " ";
 
@@ -58,5 +62,32 @@ void checkSB(const int* cpuNo, const int* userNo){
 
     for(int i = 0; i<4 ; ++i)
         std::cout << userNo[i] << " ";
+    */
+    bool win;
+    int strikeCount, ballCount;
 
+    strikeCount = 0;
+    ballCount = 0;
+
+    for(int i = 0 ; i < 4 ; ++i)
+        for(int j = 0 ; j < 4 ; ++j ){
+            if(cpuNo[i] == userNo[j]){
+                if(i == j)
+                    ++strikeCount;
+                else 
+                    ++ballCount;
+            }
+        }
+    
+    if(4 == strikeCount){
+        win = true;
+        std::cout << "게임에서 승리했습니다." << std::endl;
+        return win;
+    }
+    else 
+        win = false;
+
+    std::cout << "Strike : " << strikeCount << " Ball : " << ballCount << std::endl;
+    
+    return win;
 }
