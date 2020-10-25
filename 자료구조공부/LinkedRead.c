@@ -41,7 +41,7 @@ int main(void){
         printf("%d", cur->data);
 
         while(cur->next != NULL){
-            cur = cur->data;
+            cur = cur->next;
             printf("%d", cur->data);
         }
     }
