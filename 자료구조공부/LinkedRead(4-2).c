@@ -14,11 +14,11 @@ int main(void){
     Node * newNode = NULL;
     int readDate;
 
-    newNode = (Node*)malloc(sizeof(Node));
+    newNode = (Node*)malloc(sizeof(Node));  //dmy node 생성
     newNode->data = 0;
     newNode->next = NULL;
 
-    head = newNode;
+    head = newNode;             //dmy node에 head, tail 할당
     tail = newNode;
 
     /*
