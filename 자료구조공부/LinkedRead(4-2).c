@@ -21,7 +21,7 @@ int main(void){
     head = newNode;             //dmy node에 head, tail 할당
     tail = newNode;
 
-    /*
+    /* 책에 제시된 답
     head = (Node*)malloc(sizeof(Node));
     tail = head;
     */
