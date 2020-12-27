@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kso00011134/GitProjects/Goorm/study/Q5-1/CLinkedList.c
+stdio.h
+-
+stdlib.h
+-
+CLinkedList.h
+/home/kso00011134/GitProjects/Goorm/study/Q5-1/CLinkedList.h
+
+/home/kso00011134/GitProjects/Goorm/study/Q5-1/CLinkedList.h
+Employee.h
+/home/kso00011134/GitProjects/Goorm/study/Q5-1/Employee.h
+
+/home/kso00011134/GitProjects/Goorm/study/Q5-1/Employee.h
+
+/home/kso00011134/GitProjects/Goorm/study/Q5-1/NightDutyMain.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+CLinkedList.h
+/home/kso00011134/GitProjects/Goorm/study/Q5-1/CLinkedList.h
+Employee.h
+/home/kso00011134/GitProjects/Goorm/study/Q5-1/Employee.h
+

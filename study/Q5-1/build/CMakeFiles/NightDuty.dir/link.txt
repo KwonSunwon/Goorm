@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/NightDuty.dir/CLinkedList.c.o CMakeFiles/NightDuty.dir/NightDutyMain.c.o  -o NightDuty 
