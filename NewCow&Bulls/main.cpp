@@ -13,6 +13,11 @@ int main(){
     bool regame = false;
     bool win = false;
     do{
+		std::cout << "--------------------------\n";
+		std::cout << "----- Balls and Cows -----\n";
+		std::cout << "----- Balls and Cows -----\n";
+		std::cout << "----- Balls and Cows -----\n";
+		std::cout << "--------------------------\n";
         int *cpuNo;
         cpuNo = makeCpuNo();
 
