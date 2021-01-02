@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kso00011134/github/Goorm/study/Q5-2/DBLinkedList.c
+stdio.h
+-
+stdlib.h
+-
+DBLinkedList.h
+/home/kso00011134/github/Goorm/study/Q5-2/DBLinkedList.h
+
+/home/kso00011134/github/Goorm/study/Q5-2/DBLinkedList.h
+

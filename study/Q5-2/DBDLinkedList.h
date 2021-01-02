@@ -1,10 +1,10 @@
-#ifdef __DB_LINKED_LIST_H
-#define __DB_LINKED_LIST_H
+#ifndef __DBD_LINKED_LIST_H__
+#define __DBD_LINKED_LIST_H__
 
 #define TRUE 	1
 #define FALSE	0
 
-typedef int data;
+typedef int Data;
 
 typedef struct _node
 {
@@ -23,12 +23,12 @@ typedef struct _dbDLinkedList
 
 typedef DBDLinkedList List;
 
-void LintInit(List * plist);
+void ListInit(List * plist);
 void LInsert(List * plist, Data data);
 
 int LFirst(List * plist, Data * pdata);
 int LNext(List * plist, Data * pdata);
-int LPrevious(List * plist, Data * pdata)r
+int LPrevious(List * plist, Data * pdata);
 
 Data LRemove(List * plist);
 int LCount(List * plist);

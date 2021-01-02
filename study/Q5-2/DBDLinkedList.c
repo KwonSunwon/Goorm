@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "DBLinked.h"
+#include "DBDLinkedList.h"
 
 void ListInit(List * plist)
 {
-	Node * headDmyNode = (Node*)malloc(sizeof(Node));
-	Node * tailDmyNode = (Node*)malloc(sizeof(Node));
+	Node * headNewNode = (Node*)malloc(sizeof(Node));
+	Node * tailNewNode = (Node*)malloc(sizeof(Node));
 
 	plist->head = headNewNode;
 	plist->tail = tailNewNode;
@@ -17,10 +17,6 @@ void ListInit(List * plist)
 	tailNewNode->prev = headNewNode;
 
 	plist->numOfData = 0;
-	plist->cur = NULL;
-
-	headNewNode->data = -1;
-	tailNewNode->data = -1;
 }
 
 void LInsert(List * plist, Data data)
@@ -28,9 +24,9 @@ void LInsert(List * plist, Data data)
 	Node * newNode = (Node*)malloc(sizeof(Node)); 
 	newNode->data = data;
 	
-	newNode->prev = tail->prev;
-	tail->prev = newNode;
-	newNode->next = tail;
+	newNode->prev = plist->tail->prev;
+	plist->tail->prev = newNode;
+	newNode->next = plist->tail;
 	newNode->prev = newNode;
 
 	(plist->numOfData)++;
@@ -44,12 +40,12 @@ int LFirst(List * plist, Data * pdata)
 	plist->cur = plist->head->next;
 	*pdata = plist->cur->data;
 
-	return TURE;
+	return TRUE;
 }
 
 int LNext(List * plist, Data * pdata)
 {
-	if(plist->cur->next == tail)
+	if(plist->cur->next == plist->tail)
 		return FALSE;
 
 	plist->cur = plist->cur->next;
@@ -60,11 +56,11 @@ int LNext(List * plist, Data * pdata)
 
 int LPrevious(List * plist, Data * pdata)
 {
-	if(plist->cur->prev == head)
+	if(plist->cur->prev == plist->head)
 			return FALSE;
 
 	plist->cur = plist->cur->prev;
-	*padat = plist->cur->data;
+	*pdata = plist->cur->data;
 
 	return TRUE;
 }
@@ -75,11 +71,13 @@ Data LRemove(List * plist)
 	Node * rpos = plist->cur;
 	Data rdata = rpos->data;
 
-	if(rpos->next == tail || rpos->prev == head)
+	if(rpos->next == plist->tail || rpos->prev == plist->head)
 		return FALSE;
 
 	rpos->next->prev = rpos->prev;
 	rpos->prev->next = rpos->next;
+
+	plist->cur = plist->cur->prev;
 
 	free(rpos);
 	(plist->numOfData)--;

@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/DBDLinkedList.dir/DBDLinkedList.c.o CMakeFiles/DBDLinkedList.dir/DBDLinkedListMain.c.o  -o DBDLinkedList 

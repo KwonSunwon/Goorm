@@ -1,0 +1,3 @@
+/home/kso00011134/github/Goorm/study/Q5-2/build/CMakeFiles/rebuild_cache.dir
+/home/kso00011134/github/Goorm/study/Q5-2/build/CMakeFiles/edit_cache.dir
+/home/kso00011134/github/Goorm/study/Q5-2/build/CMakeFiles/DBDLinkedList.dir
